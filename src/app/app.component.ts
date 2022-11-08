@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   public getCustomers(): void {
     this.customerService.getCustomers().subscribe(
       (response: Customer[]) => {
-        this.customers = response;
+        //this.customers = response;
       },
       (error:HttpErrorResponse) => {
         alert(error.message);
