@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../../Services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit{
 
-  username?: string;
-  password?:string;
+  username: string = 'user';
+  password:string = 'password';
   errorMessage = 'Invalid Credentials';
   successMessage?: string;
   invalidLogin = false;
   loginSuccess = false;
 
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
   handleLogin() {
-    console.log('clicked');
+    this.loginService.login(this.username, this.password).subscribe((result) => {
+      this.invalidLogin = false;
+      this.loginSuccess = true;
+      this.successMessage = 'Login Successful';
+      // redirect to main page
+    }, () => {
+      this.invalidLogin = true;
+      this.loginSuccess = false;
+    });
   }
 
 }
