@@ -1,13 +1,16 @@
-<p>Please Login</p>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+    <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+    <!-- Tabs Titles -->
+    <h3>Login</h3>
 
-<form action="Put the end point here" method="post">
-  <div>
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="username" class="fadeIn second" [(ngModel)]="username" name="username" placeholder="username">
+      <input type="password" id="password" class="fadeIn third" [(ngModel)]="password" name="password" placeholder="password">
+      <input type="submit" (click)=handleLogin() class="fadeIn fourth" value="Log In">
+    </form>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-
-    <button type="submit">Login</button>
   </div>
-</form>
+</div>

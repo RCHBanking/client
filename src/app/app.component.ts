@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { Customer } from './Models/customer';
 import { CustomerService } from './Services/customer/customer.service';
 
@@ -8,24 +8,10 @@ import { CustomerService } from './Services/customer/customer.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'client';
   public customers?: Customer[];
 
-  ngOnInit() {
-    this.getCustomers();
-  }
-
   constructor(private customerService: CustomerService){}
 
-  public getCustomers(): void {
-    this.customerService.getCustomers().subscribe(
-      (response: Customer[]) => {
-        //this.customers = response;
-      },
-      (error:HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
 }
