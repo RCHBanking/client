@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map, tap } from 'rxjs/operators';
+import { NgIfContext } from '@angular/common';
+import { Token } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +28,8 @@ export class LoginService {
 
   logintest(username: string, password: string) {
     return this.http.post(environment.apiBaseUrl + `/api/auth/login`,
-      { username: `${username}`, password: `${password}` }).pipe(tap(res => {
-        this.registerSuccessfulLogin(username, password);
+      { username: `${username}`, password: `${password}` }).pipe(map(result => {
+        
       }));
       
   }

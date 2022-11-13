@@ -11,11 +11,7 @@
         <input type="text" id="username" class="fadeIn second" [(ngModel)]="username" name="username" placeholder="username">
         <input type="password" id="password" class="fadeIn second" [(ngModel)]="password" name="password" placeholder="password">
         <input type="submit" (click)=handleRegistration() class="fadeIn fourth" value="Register">
-        <div>
-          <a routerLink="/login">
-            <button type="button" class="fadeIn fourth" value="Login">Login</button>
-          </a>
-        </div>
+        <input type="button" routerLink="/login" class ="fadeIn fourth" value="Log In">
       </form>
   
     </div>

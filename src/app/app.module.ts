@@ -9,6 +9,7 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AccountsComponent } from './accounts/accounts.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomepageComponent,
     LoginComponent,
     RegisterComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AccountsComponent
   ],
   imports: [
     BrowserModule,

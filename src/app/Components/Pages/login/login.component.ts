@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit{
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = 'Login Successful';
-      // redirect to main page
       this.router.navigate(['/homepage']);
     }, () => {
       this.invalidLogin = true;
