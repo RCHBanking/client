@@ -8,8 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class LoginService {
   
-    public username?: string;
-    public password?: string;
+    public username: string = 'user';
+    public password: string = 'password';
 
   constructor(private http: HttpClient) {
 
@@ -17,15 +17,24 @@ export class LoginService {
 
   login(username: string, password: string) {
     return this.http.post(environment.apiBaseUrl + `/api/auth/login`,
-      { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
+      { headers: { authorization: this.createBearerAuthToken(username, password) } }).pipe(map((res) => {
         this.username = username;
         this.password = password;
         this.registerSuccessfulLogin(username, password);
       }));
   }
 
-  createBasicAuthToken(username: string, password: string) {
-    return 'Basic ' + window.btoa(username + ":" + password);
+  logintest(username: string, password: string) {
+    return this.http.post(environment.apiBaseUrl + `/api/auth/login`,
+      { username: `${username}`, password: `${password}` }).pipe(map((res) => {
+        this.username = username;
+        this.password = password;
+        this.registerSuccessfulLogin(username, password);
+      }));
+  }
+
+  createBearerAuthToken(username: string, password: string) {
+    return 'Bearer ' + window.btoa(username + ":" + password);
   }
 
   registerSuccessfulLogin(username: string , password: string) {

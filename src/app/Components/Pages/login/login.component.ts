@@ -8,8 +8,8 @@ import { LoginService } from '../../../Services/login/login.service';
 })
 export class LoginComponent implements OnInit{
 
-  username: string = 'user';
-  password:string = 'password';
+  username: string = '';
+  password: string = '';
   errorMessage = 'Invalid Credentials';
   successMessage?: string;
   invalidLogin = false;
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit{
   }
 
   handleLogin() {
-    this.loginService.login(this.username, this.password).subscribe((result) => {
+    this.loginService.logintest(this.username, this.password).subscribe((result) => {
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = 'Login Successful';

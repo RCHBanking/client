@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { Customer } from './Models/customer';
-import { CustomerService } from './Services/customer/customer.service';
+
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,6 @@ export class AppComponent {
   title = 'client';
   public customers?: Customer[];
 
-  constructor(private customerService: CustomerService){}
+  constructor(){}
 
 }

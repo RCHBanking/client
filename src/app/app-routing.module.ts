@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+import { RegisterComponent } from './Components/Pages/register/register.component';
 
 const routes: Routes = [
   
@@ -15,6 +16,10 @@ const routes: Routes = [
     path: 'homepage',
     component: HomepageComponent
   },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
 
   {
     path:'',
@@ -25,7 +30,7 @@ const routes: Routes = [
   {
     //* is the wildcard character
     path: "**",
-    component: NotfoundComponent
+    component: LoginComponent
   }
 ];
 
