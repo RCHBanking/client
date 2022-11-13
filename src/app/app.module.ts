@@ -7,7 +7,7 @@ import { HomepageComponent } from './Components/Pages/homepage/homepage.componen
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   
-    public username: string = 'user';
-    public password: string = 'password';
+    public username: string = '';
+    public password: string = '';
 
   constructor(private http: HttpClient) {
 
@@ -26,11 +26,10 @@ export class LoginService {
 
   logintest(username: string, password: string) {
     return this.http.post(environment.apiBaseUrl + `/api/auth/login`,
-      { username: `${username}`, password: `${password}` }).pipe(map((res) => {
-        this.username = username;
-        this.password = password;
+      { username: `${username}`, password: `${password}` }).pipe(tap(res => {
         this.registerSuccessfulLogin(username, password);
       }));
+      
   }
 
   createBearerAuthToken(username: string, password: string) {
