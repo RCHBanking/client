@@ -113,3 +113,61 @@
     letter-spacing: 0;
     text-decoration: none;
   }
+
+  .all-accounts-overview-container .account-overview-summary .primary-part-container .primary-part .flex-container {
+    display: flex;
+  }
+
+  .col-lg-7 {
+    width: 58.33333333%;
+  }
+
+  .all-accounts-overview-container .account-overview-summary .secondary-part-container .secondary-part {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .all-accounts-overview-container .account-overview-summary.CPO .secondary-part li {
+    flex-grow: unset;
+  }
+
+  .all-accounts-overview-container .account-overview-summary.single-account-summary .secondary-part li {
+    flex-grow: 1;
+    min-width: 50%;
+  }
+
+  .all-accounts-overview-container .account-overview-summary .secondary-part-container .secondary-part .column-reverse .column-wrap {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .all-accounts-overview-container .account-overview-summary .secondary-part-container .secondary-part .column-reverse .column-wrap .secondary-label {
+    order: 2;
+  }
+
+  .account-overview-summary .ACCTBAL, .accounts-slideIn-container .ACCTBAL, .personal-overview .ACCTBAL {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #414042;
+    letter-spacing: 0;
+    text-decoration: none;
+  }
+
+  #singleSummaryHeaderName {
+    margin-left: 10px;
+  }
+
+  #container {
+    display: inline-flex;
+    align-items: top;
+
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  }
+
+
+
+  

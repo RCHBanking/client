@@ -11,7 +11,7 @@
         </button>
     </li>
 </ul>
-<section class="main_container">
+<section id="container">
 <div id="W1" class="cxo-ovd-summar clearfix" data-has-view="true">
     <div class="all-accounts-overview-container clearfix" id="allAccountsOverview" data-is-view="true" data-component-name="ROOT/SITE/dashboard/accounts/accounts|accountsSummary|ASSETS_AND_LIABILITIES_OVERVIEW|0f3e9c34-3f96-415e-82c7-566e982fa5be">
         <div id="perf_metrics" data-shown-at="cpo-ovd"></div>
@@ -20,7 +20,7 @@
                 <div class="account-overview-summary single-account-summary CPO clearfix">
                     <div class="mds-row">
                         <div class="mds-col-at-576-6 mds-col-at-768-8 mds-col-at-992-8 mds-col-at-1200-8 header-title" id="singleSummaryAccountName">
-                            <h2 class="ACTITLE account-name" aria-level="2" tabindex="-1" id="singleSummaryHeaderName">TOTAL CHECKING (...0069)</h2>  
+                            <h2 class="ACTITLE account-name" aria-level="2" tabindex="-1" id="singleSummaryHeaderName">TOTAL CHECKING (...XXXX)</h2>  
                             <span class="routing-info">
                                 <!--<mds-link class="mds-link-font mds-d-print-none mds-link--cpo" id="singleAccountNameMask" leading-pipe="true" end-icon="ico_chevron_right" text="See full account number" accessible-text="Opens dialog:" is-button="false" href="javascript:void(0)" underline="false" accessible-text-prefix="" tab-focusable="true" inverse="false" trailing-pipe="false" inactive="false" truncation="none">
 
@@ -45,7 +45,7 @@
                                                         Available Balance
                                                     </h3>
                                                 </span>
-                                                <span id="accountAvailableBalanceLinkValue" class="CRNTBAL current-balance-value">$182.90</span>
+                                                <span id="accountAvailableBalanceLinkValue" class="CRNTBAL current-balance-value">$1820.90</span>
                                             </div>
                                         </div>
                                                 
@@ -54,7 +54,7 @@
                                                 <span id="accountBalanceLinkLabel" class="current-balance-label def-link-container">
                                                     <h3 class="NOTE current-balance-label" aria level="3">Present Balance</h3>
                                                 </span>
-                                                <span id="accountBalanceLinkValue" class="ACCTBAL">$182.90</span>
+                                                <span id="accountBalanceLinkValue" class="ACCTBAL">$1820.90</span>
                                             </div>
                                         </div>
                                     </li>
@@ -87,10 +87,13 @@
                                         </div>
                                     </li>
                                     <li class="blueprint-autopay flex-container column-reverse" id="debitCardCoverageStatusLabel1" role="none">
-                                        <div class="column-wrap"><div class="secondary-label def-link-container"><h3 class="NOTE with-link" aria-level="3">
+                                        <div class="column-wrap">
+                                            <div class="secondary-label def-link-container">
+                                                <h3 class="NOTE with-link" aria-level="3">
                                             <!--<mds-definition-link id="debitCardCoverageStatusLabelDefinitionLink-secondary" definition-text="Debit card coverage" tooltip-message="This feature of your checking account may cover certain everyday debit card purchases—at our discretion—even if you don't have enough money available.</br></br>If your status is set to &quot;On,&quot; you want us to approve and pay your everyday debit card transactions when you don't have enough money available (fees may apply).</br></br>If it's set to &quot;Off,&quot; you don't want us to approve and pay your everyday debit card transactions when you don't have enough money available. Instead, your debit card purchases will be declined and you won't be charged an insufficient funds fee for these transactions.</br></br>You can change your debit card coverage anytime online or in a branch." tooltip-placement="below" alignment="left" is-button="false" href="javascript:void(0)" accessible-text-prefix="" tooltip-alignment="left" class="mds-definition-link--cpo">
 
                                             </mds-definition-link>-->
+                                            Debit card coverage
                                         </h3>    
                                     </div> 
                                     <div class="card-chiclet-value ACCTBAL with-link" id="debitCardCoverageStatusChicklet">
