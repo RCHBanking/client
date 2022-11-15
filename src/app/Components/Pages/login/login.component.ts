@@ -31,13 +31,11 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onLogin() {
+  async onLogin() {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
-    this.authService.login(this.formControl['username'].value, this.formControl['password'].value);
-    this.router.navigate(["/summary"]);
-    
+    await this.authService.login(this.formControl['username'].value, this.formControl['password'].value).toPromise().then(() => this.router.navigate(["/summary"]));
   }
 }
