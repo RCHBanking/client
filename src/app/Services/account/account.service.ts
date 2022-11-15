@@ -18,7 +18,7 @@ export class AccountService {
   } 
 
   getAccounts(): Observable<Account[]> {
-    const accounts = of(ACCOUNTS)
+    const accounts = of(ACCOUNTS);
     return accounts;
   }
 

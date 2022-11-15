@@ -1,6 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/Models/account';
-import { ACCOUNTS } from 'src/app/Models/mock-accounts';
 import { AccountService } from 'src/app/Services/account/account.service';
 
 @Component({
@@ -15,11 +15,16 @@ export class AccountsComponent implements OnInit {
     this.selectedAccount = account;
   }
 
-  accounts = ACCOUNTS;
+  accounts: Account[] = [];
 
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.getAccounts();
+  }
+
+  getAccounts(): void {
+    this.accountService.getAccountsTest().subscribe(accounts => this.accounts = accounts);
   }
 
 }
