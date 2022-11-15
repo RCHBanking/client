@@ -1,7 +1,4 @@
-
 import { Component } from '@angular/core';
-import { Customer } from './Models/customer';
-
 
 @Component({
   selector: 'app-root',
@@ -10,8 +7,4 @@ import { Customer } from './Models/customer';
 })
 export class AppComponent {
   title = 'client';
-  public customers?: Customer[];
-
-  constructor(){}
-
 }
