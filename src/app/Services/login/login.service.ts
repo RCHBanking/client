@@ -29,7 +29,7 @@ export class LoginService {
   logintest(username: string, password: string) {
     return this.http.post(environment.apiBaseUrl + `/api/auth/login`,
       { username: `${username}`, password: `${password}` }).pipe(map(result => {
-        
+        console.log(result)
       }));
       
   }

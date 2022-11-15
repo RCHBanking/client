@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Account } from '../Models/account';
+import { ACCOUNTS } from '../Models/mock-accounts';
 
 @Component({
   selector: 'app-accounts',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
+
+  accounts = ACCOUNTS;
 
   constructor() { }
 
