@@ -10,7 +10,7 @@
         </button>
     </li>
 </ul>
-<section id="container">
+<section id="container" *ngIf="selectedAccount">
 <div id="W1" class="cxo-ovd-summar clearfix" data-has-view="true">
     <div class="all-accounts-overview-container clearfix" id="allAccountsOverview" data-is-view="true" data-component-name="ROOT/SITE/dashboard/accounts/accounts|accountsSummary|ASSETS_AND_LIABILITIES_OVERVIEW|0f3e9c34-3f96-415e-82c7-566e982fa5be">
         <div id="perf_metrics" data-shown-at="cpo-ovd"></div>
@@ -19,7 +19,7 @@
                 <div class="account-overview-summary single-account-summary CPO clearfix">
                     <div class="mds-row">
                         <div class="mds-col-at-576-6 mds-col-at-768-8 mds-col-at-992-8 mds-col-at-1200-8 header-title" id="singleSummaryAccountName">
-                            <h2 class="ACTITLE account-name" aria-level="2" tabindex="-1" id="singleSummaryHeaderName">TOTAL CHECKING (...XXXX)</h2>  
+                            <h2 class="ACTITLE account-name" aria-level="2" tabindex="-1" id="singleSummaryHeaderName">RCHB: {{selectedAccount.name | uppercase}} (...{{selectedAccount.id}})</h2>  
                             <span class="routing-info">
                                 <!--<mds-link class="mds-link-font mds-d-print-none mds-link--cpo" id="singleAccountNameMask" leading-pipe="true" end-icon="ico_chevron_right" text="See full account number" accessible-text="Opens dialog:" is-button="false" href="javascript:void(0)" underline="false" accessible-text-prefix="" tab-focusable="true" inverse="false" trailing-pipe="false" inactive="false" truncation="none">
                                 </mds-link>-->
@@ -42,7 +42,7 @@
                                                         Available Balance
                                                     </h3>
                                                 </span>
-                                                <span id="accountAvailableBalanceLinkValue" class="CRNTBAL current-balance-value">$1820.90</span>
+                                                <span id="accountAvailableBalanceLinkValue" class="CRNTBAL current-balance-value">{{selectedAccount.balance | currency}}</span>
                                             </div>
                                         </div>
                                                 
@@ -51,7 +51,7 @@
                                                 <span id="accountBalanceLinkLabel" class="current-balance-label def-link-container">
                                                     <h3 class="NOTE current-balance-label" aria level="3">Present Balance</h3>
                                                 </span>
-                                                <span id="accountBalanceLinkValue" class="ACCTBAL">$1820.90</span>
+                                                <span id="accountBalanceLinkValue" class="ACCTBAL">{{selectedAccount.balance | currency}}</span>
                                             </div>
                                         </div>
                                     </li>
