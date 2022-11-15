@@ -10,6 +10,11 @@ import { ACCOUNTS } from '../Models/mock-accounts';
 export class AccountsComponent implements OnInit {
 
   accounts = ACCOUNTS;
+  selectedAccount?: Account;
+  onSelect(account: Account): void {
+    this.selectedAccount = account;
+  }
+
 
   constructor() { }
 

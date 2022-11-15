@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,7 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AccountsComponent } from './accounts/accounts.component';
+import { SummaryComponent } from './Components/Pages/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,13 @@ import { AccountsComponent } from './accounts/accounts.component';
     LoginComponent,
     RegisterComponent,
     NotfoundComponent,
-    AccountsComponent
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

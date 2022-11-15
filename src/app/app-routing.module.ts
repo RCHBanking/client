@@ -4,6 +4,10 @@ import { HomepageComponent } from './Components/Pages/homepage/homepage.componen
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
+<<<<<<< HEAD
+=======
+import { SummaryComponent } from './Components/Pages/summary/summary.component';
+>>>>>>> dabc9d1207cc3ad1088f494d7af5698300a0badf
 
 const routes: Routes = [
   
@@ -13,7 +17,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'homepage',
+    path: '',
     component: HomepageComponent
   },
   {
@@ -22,9 +26,12 @@ const routes: Routes = [
   },
 
   {
-    path:'',
-    redirectTo: '/login',
-    pathMatch: 'full'
+    path: 'register',
+    component: RegisterComponent 
+  },
+  {
+    path: 'summary',
+    component: SummaryComponent
   },
 
   {
