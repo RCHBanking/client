@@ -17,7 +17,7 @@ export class AuthService {
     return this.http.post<Observable<Object>>(
       `${environment.apiUrl}/api/auth/login`, 
         { "username": username, "password": password })
-        .pipe(tap((auth: Observable<Object>) => this.setToken(auth))).subscribe();
+        .pipe(tap((auth: Observable<Object>) => this.setToken(auth)));
   }
 
   private setToken(result: any) {
