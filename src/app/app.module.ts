@@ -12,6 +12,7 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 import { SummaryComponent } from './Components/Pages/summary/summary.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { AccountDetailComponent } from './Components/account-detail/account-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     SummaryComponent,
     AccountsComponent,
     NavbarComponent,
+    AccountDetailComponent,
   ],
   imports: [
     BrowserModule,
