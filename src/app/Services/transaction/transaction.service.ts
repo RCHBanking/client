@@ -18,7 +18,11 @@ export class TransactionService {
     headers: this.header
   } 
 
-  getTransactions(id: number): Observable<Transaction[]> {
+  getExpenseTransactions(id: number): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(`${environment.apiUrl}/api/transaction/view-expenses/${id}`, this.requestOptions)
+  }
+
+  getIncomeTransactions(id: number): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(`${environment.apiUrl}/api/transaction/view-income/${id}`, this.requestOptions)
   }
 

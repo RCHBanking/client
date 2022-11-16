@@ -4,9 +4,8 @@
 <ul class="accounts">
     <li *ngFor="let account of accounts">
         <button type="button" (click)="onSelect(account)">
-            <span class="badge">{{account.id}}</span>
-            <span class="name">{{account.name}}</span>
-            <span class="balance">{{account.balance}}</span>
+            <span class="name">{{account.name}} (...</span>
+            <span class="badge">{{account.id}})</span>
         </button>
     </li>
 </ul>
@@ -62,7 +61,7 @@
                                     <li class="blueprint-autopay flex-container column-reverse" id="totalDepositsLabel1" role="none">
                                         <div class="column-wrap">
                                             <div class="secondary-label def-link-container">
-                                                <h3 class="NOTE" aria-level="3">Deposits this month</h3>    
+                                                <a (click)="onView(income_transactions)" class="NOTE" aria-level="3">Deposits this month</a>    
                                             </div> 
                                             <div class="card-chiclet-value ACCTBAL" id="totalDepositsChicklet">   
                                                 <span> 
@@ -106,6 +105,8 @@
                         </ul>
                             </div>
                         </div>
+                        <button type="button" (click)="onView(income_transactions)">View Income</button>
+                        <button type="button" (click)="onView(income_transactions)">View Expenses</button>
                     </div>
                     <div class="action-container overview-cta-num-xs-items-2 util print-hide"></div>
                 </div>
@@ -113,4 +114,13 @@
         </div>
     </div>
 </div>
+</section>
+
+<section *ngIf="selectedView">
+    <ul>
+        <li *ngFor="let transaction of selectedView">
+            <span>{{transaction.amount}}</span>
+            <span>{{transaction.description}}</span>
+        </li>
+    </ul>
 </section>

@@ -13,16 +13,24 @@ import { TransactionService } from 'src/app/Services/transaction/transaction.ser
 export class AccountsComponent implements OnInit {
 
   public accounts: Account[] = [];
-  public transactions: Transaction[] = [];
+  public income_transactions: Transaction[] = [];
+  public expense_transactions: Transaction[] = [];
   public income: number = 0;
   public expenses: number = 0;
   public selectedAccount?: Account;
+  public selectedView?: Transaction[];
 
   onSelect(account: Account): void {
     this.selectedAccount = account;
     this.setIncome(this.selectedAccount.id);
     this.setExpenses(this.selectedAccount.id);
     this.getAccounts();
+    this.getExpenses(this.selectedAccount.id);
+    this.getIncome(this.selectedAccount.id);
+  }
+
+  onView(transactions: Transaction[]): void {
+    this.selectedView = transactions;
   }
 
   
@@ -37,8 +45,12 @@ export class AccountsComponent implements OnInit {
     this.accountService.getAccountsTest().subscribe(accounts => this.accounts = accounts);
   }
 
-  getIncome(): void {
-    this.transactionService.getTransactions(1).subscribe(transactions => this.transactions = transactions);
+  getIncome(id: number): void {
+    this.transactionService.getIncomeTransactions(id).subscribe(transactions => this.income_transactions = transactions);
+  }
+
+  getExpenses(id: number): void {
+    this.transactionService.getExpenseTransactions(id).subscribe(transactions => this.expense_transactions = transactions);
   }
 
   setIncome(id: number): void {
