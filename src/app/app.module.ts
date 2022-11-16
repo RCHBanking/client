@@ -11,6 +11,7 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { SummaryComponent } from './Components/Pages/summary/summary.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AccountsComponent } from './Components/accounts/accounts.component';
     NotfoundComponent,
     SummaryComponent,
     AccountsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
