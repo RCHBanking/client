@@ -14,10 +14,9 @@ const routes: Routes = [
   },
 
   {
-    path: '',
+    path: 'homepage',
     component: HomepageComponent
   },
-
   {
     path: 'register',
     component: RegisterComponent 
@@ -26,7 +25,11 @@ const routes: Routes = [
     path: 'summary',
     component: SummaryComponent
   },
-
+  { 
+    path: '',   
+    redirectTo: '/homepage', 
+    pathMatch: 'full' 
+  },
   {
     //* is the wildcard character
     path: "**",
