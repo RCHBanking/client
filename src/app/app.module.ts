@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
-import { LoginComponent } from './Components/Pages/login/login.component';
-import { RegisterComponent } from './Components/Pages/register/register.component';
-import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
-import { SummaryComponent } from './Components/Pages/summary/summary.component';
+import { HomepageComponent } from './Components/homepage/homepage.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { SummaryComponent } from './Components/summary/summary.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     SummaryComponent,
     AccountsComponent,
     NavbarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
         <label>Username</label>
         <input type="username" formControlName="username" class="form-control" placeholder="Enter Username">
         <div *ngIf="submitted && formControl['username'].errors" class="invalid-feedback">
-            <div *ngIf="formControl['username'].errors['required']"></div>
+            <div *ngIf="formControl['username'].errors['required']">User name is required!</div>
         </div>
     </div>
     
@@ -11,7 +11,7 @@
         <label>Password</label>
         <input type="password" formControlName="password" class="form-control" placeholder="Enter Password">
         <div *ngIf="submitted && formControl['password'].errors" class="invalid=feedback">
-            <div *ngIf="formControl['password'].errors['required']"></div>
+            <div *ngIf="formControl['password'].errors['required']">Password is requried!</div>
         </div>
     </div>
     <br>

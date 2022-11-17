@@ -1,10 +1,11 @@
+import { ProfileComponent } from './Components/profile/profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
-import { LoginComponent } from './Components/Pages/login/login.component';
-import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
-import { RegisterComponent } from './Components/Pages/register/register.component';
-import { SummaryComponent } from './Components/Pages/summary/summary.component';
+import { HomepageComponent } from './Components/homepage/homepage.component';
+import { LoginComponent } from './Components/login/login.component';
+import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { SummaryComponent } from './Components/summary/summary.component';
 
 const routes: Routes = [
   
@@ -25,6 +26,11 @@ const routes: Routes = [
   {
     path: 'summary',
     component: SummaryComponent
+  },
+
+  {
+    path:'profile',
+    component: ProfileComponent
   },
 
   {
