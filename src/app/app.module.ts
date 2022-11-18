@@ -12,6 +12,7 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 import { SummaryComponent } from './Components/Pages/summary/summary.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { DarkModeToggleComponent } from './Components/dark-mode-toggle/dark-mode-toggle.component';
 import { AccountDetailComponent } from './Components/account-detail/account-detail.component';
 import { TransferComponent } from './Components/Pages/transfer/transfer.component';
 
@@ -25,7 +26,7 @@ import { TransferComponent } from './Components/Pages/transfer/transfer.componen
     NotfoundComponent,
     SummaryComponent,
     AccountsComponent,
-    NavbarComponent,
+    DarkModeToggleComponent,
     AccountDetailComponent,
     TransferComponent
     
