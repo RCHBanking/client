@@ -1,6 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/Models/account';
-import { ACCOUNTS } from 'src/app/Models/mock-accounts';
+import { Transaction } from 'src/app/Models/transaction';
+import { AccountService } from 'src/app/Services/account/account.service';
+import { TransactionService } from 'src/app/Services/transaction/transaction.service';
 
 @Component({
   selector: 'app-accounts',
@@ -9,16 +12,53 @@ import { ACCOUNTS } from 'src/app/Models/mock-accounts';
 })
 export class AccountsComponent implements OnInit {
 
-  selectedAccount?: Account;
+  public accounts: Account[] = [];
+  public income_transactions: Transaction[] = [];
+  public expense_transactions: Transaction[] = [];
+  public income: number = 0;
+  public expenses: number = 0;
+  public selectedAccount?: Account;
+  public selectedView?: Transaction[];
+
   onSelect(account: Account): void {
     this.selectedAccount = account;
+    this.setIncome(this.selectedAccount.id);
+    this.setExpenses(this.selectedAccount.id);
+    this.getAccounts();
+    this.getExpenses(this.selectedAccount.id);
+    this.getIncome(this.selectedAccount.id);
   }
 
-  accounts = ACCOUNTS;
+  onView(transactions: Transaction[]): void {
+    this.selectedView = transactions;
+  }
 
-  constructor() { }
+  
+
+  constructor(private accountService: AccountService, private transactionService: TransactionService) { }
 
   ngOnInit(): void {
+    this.getAccounts();
+  }
+
+  getAccounts(): void {
+    this.accountService.getAccountsTest().subscribe(accounts => this.accounts = accounts);
+  }
+
+  getIncome(id: number): void {
+    this.transactionService.getIncomeTransactions(id).subscribe(transactions => this.income_transactions = transactions);
+  }
+
+  getExpenses(id: number): void {
+    this.transactionService.getExpenseTransactions(id).subscribe(transactions => this.expense_transactions = transactions);
+  }
+
+  setIncome(id: number): void {
+    this.transactionService.getIncomeSum(id).subscribe(income => this.income = income);
+  }
+
+  setExpenses(id: number): void {
+    this.transactionService.getExpenseSum(id).subscribe(expenses => this.expenses = expenses);
   }
 
 }

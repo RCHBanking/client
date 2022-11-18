@@ -1,6 +1,6 @@
 import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Account } from 'src/app/Models/account';
 import { AuthService } from 'src/app/Services/auth/auth.service';
 import { tap } from 'rxjs';
@@ -10,7 +10,7 @@ import { tap } from 'rxjs';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css']
 })
-export class SummaryComponent implements OnInit, OnChanges{
+export class SummaryComponent implements OnInit {
 
   @Input() loggedin = this.authService.loggedIn;
 

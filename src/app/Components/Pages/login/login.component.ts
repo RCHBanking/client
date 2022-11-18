@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 
 import { AuthService } from '../../../Services/auth/auth.service';
 
@@ -36,6 +37,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    await this.authService.login(this.formControl['username'].value, this.formControl['password'].value).toPromise().then(() => this.router.navigate(["/summary"]));
+    await lastValueFrom(this.authService.login(this.formControl['username'].value, this.formControl['password'].value)).then(() => this.router.navigate(["/summary"]));
   }
 }
