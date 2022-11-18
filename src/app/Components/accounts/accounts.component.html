@@ -4,13 +4,12 @@
 <ul class="accounts">
     <li *ngFor="let account of accounts">
         <button type="button" (click)="onSelect(account)">
-            <span class="badge">{{account.id}}</span>
-            <span class="name">{{account.name}}</span>
-            <span class="balance">{{account.balance}}</span>
+            <span class="name">{{account.name}} (...</span>
+            <span class="badge">{{account.id}})</span>
         </button>
     </li>
 </ul>
-<section id="container">
+<section id="container" *ngIf="selectedAccount">
 <div id="W1" class="cxo-ovd-summar clearfix" data-has-view="true">
     <div class="all-accounts-overview-container clearfix" id="allAccountsOverview" data-is-view="true" data-component-name="ROOT/SITE/dashboard/accounts/accounts|accountsSummary|ASSETS_AND_LIABILITIES_OVERVIEW|0f3e9c34-3f96-415e-82c7-566e982fa5be">
         <div id="perf_metrics" data-shown-at="cpo-ovd"></div>
@@ -19,7 +18,7 @@
                 <div class="account-overview-summary single-account-summary CPO clearfix">
                     <div class="mds-row">
                         <div class="mds-col-at-576-6 mds-col-at-768-8 mds-col-at-992-8 mds-col-at-1200-8 header-title" id="singleSummaryAccountName">
-                            <h2 class="ACTITLE account-name" aria-level="2" tabindex="-1" id="singleSummaryHeaderName">TOTAL CHECKING (...XXXX)</h2>  
+                            <h2 class="ACTITLE account-name" aria-level="2" tabindex="-1" id="singleSummaryHeaderName">RCHB: {{selectedAccount.name | uppercase}} (...{{selectedAccount.id}})</h2>  
                             <span class="routing-info">
                                 <!--<mds-link class="mds-link-font mds-d-print-none mds-link--cpo" id="singleAccountNameMask" leading-pipe="true" end-icon="ico_chevron_right" text="See full account number" accessible-text="Opens dialog:" is-button="false" href="javascript:void(0)" underline="false" accessible-text-prefix="" tab-focusable="true" inverse="false" trailing-pipe="false" inactive="false" truncation="none">
                                 </mds-link>-->
@@ -42,7 +41,7 @@
                                                         Available Balance
                                                     </h3>
                                                 </span>
-                                                <span id="accountAvailableBalanceLinkValue" class="CRNTBAL current-balance-value">$1820.90</span>
+                                                <span id="accountAvailableBalanceLinkValue" class="CRNTBAL current-balance-value">{{selectedAccount.balance | currency}}</span>
                                             </div>
                                         </div>
                                                 
@@ -51,7 +50,7 @@
                                                 <span id="accountBalanceLinkLabel" class="current-balance-label def-link-container">
                                                     <h3 class="NOTE current-balance-label" aria level="3">Present Balance</h3>
                                                 </span>
-                                                <span id="accountBalanceLinkValue" class="ACCTBAL">$1820.90</span>
+                                                <span id="accountBalanceLinkValue" class="ACCTBAL">{{selectedAccount.balance | currency}}</span>
                                             </div>
                                         </div>
                                     </li>
@@ -62,11 +61,11 @@
                                     <li class="blueprint-autopay flex-container column-reverse" id="totalDepositsLabel1" role="none">
                                         <div class="column-wrap">
                                             <div class="secondary-label def-link-container">
-                                                <h3 class="NOTE" aria-level="3">Deposits this month</h3>    
+                                                <a (click)="onView(income_transactions)" class="NOTE" aria-level="3">Deposits this month</a>    
                                             </div> 
                                             <div class="card-chiclet-value ACCTBAL" id="totalDepositsChicklet">   
                                                 <span> 
-                                                    <span class="depositsWithdrawals">+$902.11</span> 
+                                                    <span class="depositsWithdrawals">+{{income | currency}}</span> 
                                                 </span>  
                                             </div>   
                                         </div>
@@ -78,7 +77,7 @@
                                             </div> 
                                             <div class="card-chiclet-value ACCTBAL" id="totalWithdrawalsChicklet">   
                                                 <span> 
-                                                    <span class="depositsWithdrawals">-$610.03</span> 
+                                                    <span class="depositsWithdrawals">-{{expenses |currency}}</span> 
                                                 </span>  
                                             </div>   
                                         </div>
@@ -106,6 +105,8 @@
                         </ul>
                             </div>
                         </div>
+                        <button type="button" (click)="onView(income_transactions)">View Income</button>
+                        <button type="button" (click)="onView(expense_transactions)">View Expenses</button>
                     </div>
                     <div class="action-container overview-cta-num-xs-items-2 util print-hide"></div>
                 </div>
@@ -113,4 +114,13 @@
         </div>
     </div>
 </div>
+</section>
+
+<section *ngIf="selectedView">
+    <ul>
+        <li *ngFor="let transaction of selectedView">
+            <span>{{transaction.amount}}</span>
+            <span>{{transaction.description}}</span>
+        </li>
+    </ul>
 </section>

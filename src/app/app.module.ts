@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,9 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 import { SummaryComponent } from './Components/Pages/summary/summary.component';
 import { AccountsComponent } from './Components/accounts/accounts.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { AccountDetailComponent } from './Components/account-detail/account-detail.component';
+import { TransferComponent } from './Components/Pages/transfer/transfer.component';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +26,16 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     SummaryComponent,
     AccountsComponent,
     NavbarComponent,
+    AccountDetailComponent,
+    TransferComponent
+    
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
