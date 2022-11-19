@@ -11,7 +11,8 @@ export class DarkModeToggleComponent {
 
   darkMode$: Observable<boolean> = this.darkModeService.darkMode$;
 
-  constructor(private darkModeService: DarkModeService) {}
+  constructor(private darkModeService: DarkModeService) {
+  }
 
   onToggle(): void {
     this.darkModeService.toggle();
