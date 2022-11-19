@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './Components/homepage/homepage.component';
-import { LoginComponent } from './Components/login/login.component';
-import { RegisterComponent } from './Components/register/register.component';
-import { NotfoundComponent } from './Components/notfound/notfound.component';
-import { SummaryComponent } from './Components/summary/summary.component';
-import { AccountsComponent } from './Components/accounts/accounts.component';
-import { NavbarComponent } from './Components/navbar/navbar.component';
-import { ProfileComponent } from './Components/profile/profile.component';
+import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
+import { LoginComponent } from './Components/Pages/login/login.component';
+import { RegisterComponent } from './Components/Pages/register/register.component';
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+import { SummaryComponent } from './Components/Pages/summary/summary.component';
+import { AccountsComponent } from './Components/Pages/accounts/accounts.component';
+import { NavbarComponent } from './Components/Pages/navbar/navbar.component';
+import { ProfileComponent } from './Components/Pages/profile/profile.component';
+import { DarkModeToggleComponent } from './Components/Pages/dark-mode-toggle/dark-mode-toggle.component';
+import { AccountDetailComponent } from './Components/Pages/account-detail/account-detail.component';
+import { TransferComponent } from './Components/Pages/transfer/transfer.component';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +29,17 @@ import { ProfileComponent } from './Components/profile/profile.component';
     AccountsComponent,
     NavbarComponent,
     ProfileComponent,
+    DarkModeToggleComponent,
+    AccountDetailComponent,
+    TransferComponent
+    
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
