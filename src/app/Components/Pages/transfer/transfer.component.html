@@ -1,12 +1,16 @@
-  <div class="centerbox">
+<div class="centerbox">
     <h1>Transfer Money</h1>
     <br />
+      <!-- Login Form -->
       <form>
-        <label>Transfer from<br /><em>(account id)</em></label>
+        <label>Transfer from</label>
         <br />
-        <input type="number" id="fromId" [(ngModel)]="fromId" name="fromId" placeholder="fromId">
+        <select [(ngModel)]="selectedAccountId">
+          <option *ngFor="let a of accounts" [ngValue]="a">{{a.name}}   (...{{a.id}})   {{a.balance}}</option>
+        </select>
+        <input type="number" id="fromId" [(ngModel)]="fromId" name="fromId" placeholder="toId">
         <br />
-        <label>Transfer to<br /><em>(account id)</em></label>
+        <label>Transfer to<br /><label>
         <br />
         <input type="number" id="toId" [(ngModel)]="toId" name="toId" placeholder="toId">
         <br />

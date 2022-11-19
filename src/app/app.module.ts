@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
@@ -15,6 +16,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { DarkModeToggleComponent } from './Components/dark-mode-toggle/dark-mode-toggle.component';
 import { AccountDetailComponent } from './Components/account-detail/account-detail.component';
 import { TransferComponent } from './Components/Pages/transfer/transfer.component';
+
 
 
 @NgModule({
