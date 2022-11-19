@@ -1,20 +1,27 @@
-<p>transfer works!</p>
-
-<button (click)="onSubmit()">Submit</button>
-
-<div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-      <h3>Register</h3>
-  
-      <!-- Login Form -->
+<br />
+<br />
+<br />
+<br />
+  <div class="centerbox">
+    <h1>Transfer Money</h1>
+    <br />
       <form>
+        <label>Transfer from<br /><em>(account id)</em></label>
+        <br />
         <input type="number" id="fromId" [(ngModel)]="fromId" name="fromId" placeholder="fromId">
+        <br />
+        <label>Transfer to<br /><em>(account id)</em></label>
+        <br />
         <input type="number" id="toId" [(ngModel)]="toId" name="toId" placeholder="toId">
+        <br />
+        <label>Amount</label>
+        <br />
         <input type="number" id="password" [(ngModel)]="amount" name="amount" placeholder="amount">
+        <br />
+        <label>Description</label>
+        <br />
         <input type="text" id="surname" [(ngModel)]="description" name="description" placeholder="description">
-        <input type="submit" (click)=onSubmit() class="fadeIn fourth" value="Submit">
+        <br />
+        <input type="submit" (click)="onSubmit()" class="submit" value="Submit">
       </form>
-  
-    </div>
-  </div>
+   </div>
