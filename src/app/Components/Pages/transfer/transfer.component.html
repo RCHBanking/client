@@ -1,5 +1,3 @@
-<p>transfer works!</p>
-
 <button (click)="onSubmit()">Submit</button>
 
 <div class="wrapper fadeInDown">
@@ -9,7 +7,10 @@
   
       <!-- Login Form -->
       <form>
-        <input type="number" id="fromId" [(ngModel)]="fromId" name="fromId" placeholder="fromId">
+        <select [(ngModel)]="selectedAccountId">
+          <option *ngFor="let a of accounts" [ngValue]="a">{{a.name}}   (...{{a.id}})   {{a.balance}}</option>
+        </select>
+        <input type="number" id="fromId" [(ngModel)]="fromId" name="fromId" placeholder="toId">
         <input type="number" id="toId" [(ngModel)]="toId" name="toId" placeholder="toId">
         <input type="number" id="password" [(ngModel)]="amount" name="amount" placeholder="amount">
         <input type="text" id="surname" [(ngModel)]="description" name="description" placeholder="description">

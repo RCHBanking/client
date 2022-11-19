@@ -18,11 +18,6 @@ export class AccountService {
   } 
 
   getAccounts(): Observable<Account[]> {
-    const accounts = of(ACCOUNTS);
-    return accounts;
-  }
-
-  getAccountsTest(): Observable<Account[]> {
     return this.http.get<Account[]>(`${environment.apiUrl}/api/account/customerAccounts`, this.requestOptions);
   }
 
