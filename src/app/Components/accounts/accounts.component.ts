@@ -42,7 +42,7 @@ export class AccountsComponent implements OnInit {
   }
 
   getAccounts(): void {
-    this.accountService.getAccountsTest().subscribe(accounts => this.accounts = accounts);
+    this.accountService.getAccounts().subscribe(accounts => this.accounts = accounts);
   }
 
   getIncome(id: number): void {
