@@ -23,6 +23,10 @@ const routes: Routes = [
     component: SummaryComponent
   },
 
+  {
+    path:'homepage',
+    component: HomepageComponent
+  },
   { 
     path: '',   
     redirectTo: '/homepage', 

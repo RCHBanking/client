@@ -26,6 +26,7 @@ import { TransferComponent } from './Components/Pages/transfer/transfer.componen
     NotfoundComponent,
     SummaryComponent,
     AccountsComponent,
+    NavbarComponent,
     DarkModeToggleComponent,
     AccountDetailComponent,
     TransferComponent
