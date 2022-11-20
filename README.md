@@ -1,6 +1,6 @@
 # Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+This project was generated with [Angular CLI Setup](https://angular.io/guide/setup-local) version 14.2.7.
 
 ## Development server
 
