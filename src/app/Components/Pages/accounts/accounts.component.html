@@ -1,5 +1,8 @@
 <div class="account-overview-summary single-account-summary CPO clearfix">
     <h2 id="singleSummaryHeaderName" class="ACTICLE account-name">My Accounts</h2>
+    <div class="button-container">
+        <button class="button" type="button" (click)="onTransfer()">Transfer</button>
+    </div>
 </div>
 <ul class="accounts">
     <li *ngFor="let account of accounts">

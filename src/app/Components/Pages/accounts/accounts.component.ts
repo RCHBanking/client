@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Account } from 'src/app/Models/account';
 import { Transaction } from 'src/app/Models/transaction';
 import { AccountService } from 'src/app/Services/account/account.service';
@@ -33,9 +34,11 @@ export class AccountsComponent implements OnInit {
     this.selectedView = transactions;
   }
 
-  
 
-  constructor(private accountService: AccountService, private transactionService: TransactionService) { }
+  constructor(
+    private accountService: AccountService, 
+    private transactionService: TransactionService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getAccounts();
@@ -60,5 +63,10 @@ export class AccountsComponent implements OnInit {
   setExpenses(id: number): void {
     this.transactionService.getExpenseSum(id).subscribe(expenses => this.expenses = expenses);
   }
+
+  onTransfer() {
+    this.router.navigate(["/transfer"]);
+  }
+
 
 }

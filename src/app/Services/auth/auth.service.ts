@@ -21,13 +21,13 @@ export class AuthService {
   }
 
   private setToken(result: any) {
-    const expiresAt = moment().add(result.expiresAt);
+    const expiresAt = moment().add(result.expires_in);;
     localStorage.setItem('token', result.access_token);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
   }
 
   public logout() {
-    localStorage.removeItem("id_token");
+    localStorage.removeItem("token");
     localStorage.removeItem("expires_at");
   }
 

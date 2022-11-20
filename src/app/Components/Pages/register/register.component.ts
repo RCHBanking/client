@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { Customer } from '../../Models/customer';
+import { Customer } from '../../../Models/customer';
 
 @Component({
   selector: 'app-register',
@@ -47,4 +47,7 @@ export class RegisterComponent implements OnInit {
     lastValueFrom(this.http.post(`${environment.apiUrl}/api/customer/register`, customer)).then(() => this.router.navigate(['/login']));
   }
 
+  onRedirect() {
+    this.router.navigate(["/login"]);
+  }
 }
