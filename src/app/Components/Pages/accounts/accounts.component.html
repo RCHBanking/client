@@ -125,11 +125,12 @@
 </div>
 </section>
 
-<section *ngIf="selectedView">
-    <ul>
+<section class="centerbox" *ngIf="selectedView">
+    <h2>Transactions</h2>
+    <ul class="floatleft">
         <li *ngFor="let transaction of selectedView">
-            <span>{{transaction.amount}}</span>
-            <span>{{transaction.description}}</span>
+            <span><h3>Amount: </h3>{{transaction.amount | currency }}</span>
+            <span><h3>Description: </h3>{{transaction.description}}</span>
         </li>
     </ul>
 </section>
