@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { ProfileComponent } from './Components/Pages/profile/profile.component';
 import { DarkModeToggleComponent } from './Components/Pages/dark-mode-toggle/dark-mode-toggle.component';
 import { AccountDetailComponent } from './Components/Pages/account-detail/account-detail.component';
 import { TransferComponent } from './Components/Pages/transfer/transfer.component';
+
 
 
 @NgModule({
