@@ -1,8 +1,14 @@
+<div class="button-container">
+    <button class="button" type="button" (click)="onProfile()">My Profile</button>
+    <br />
+    <br />
+    <button class="button" type="button" (click)="onTransfer()">Transfer money</button>
+    <br />
+    <br />
+    <button class="button" type="button" (click)="onSendMoney()">Send money</button>
+</div>
 <div class="account-overview-summary single-account-summary CPO clearfix">
     <h2 id="singleSummaryHeaderName" class="ACTICLE account-name">My Accounts</h2>
-    <div class="button-container">
-        <button class="button" type="button" (click)="onTransfer()">Transfer</button>
-    </div>
 </div>
 <ul class="accounts">
     <li *ngFor="let account of accounts">

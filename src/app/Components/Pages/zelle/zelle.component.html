@@ -1,9 +1,11 @@
+<h3>Return to Account Summary:</h3>
+<a routerLink="/summary" class="button">Summary</a>
 <div class="centerbox">
-    <h1>Transfer Money</h1>
+    <h1>Send Money to Another User</h1>
     <br />
       <!-- Login Form -->
       <form>
-        <label>Transfer from</label>
+        <label>Send from</label>
         <br />
         <select [(ngModel)]="selectedAccountId">
           <option *ngFor="let a of accounts" [ngValue]="a">{{a.name}}   (...{{a.id}})   {{a.balance}}</option>

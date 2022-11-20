@@ -37,6 +37,10 @@
   body:not(.dark-mode-preloading) input{
     transition: all 0.3s linear;
   }
+
+  body:not(.dark-mode-preloading) select{
+    transition: all 0.3s linear;
+  }
   
   body.dark-mode input{
     background-color: #384244;
@@ -45,6 +49,18 @@
   }
   
   body.light-mode input{
+    background-color: #c6ced1;
+    color: #171a1b;
+    border-bottom: 1px solid black;
+  }
+
+  body.dark-mode select{
+    background-color: #384244;
+    color: #dfe6e9;
+    border-bottom: 1px solid #536063;
+  }
+  
+  body.light-mode select{
     background-color: #c6ced1;
     color: #171a1b;
     border-bottom: 1px solid black;

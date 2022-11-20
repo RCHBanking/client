@@ -68,5 +68,12 @@ export class AccountsComponent implements OnInit {
     this.router.navigate(["/transfer"]);
   }
 
+  onSendMoney() {
+    this.router.navigate(["/zelle"]);
+  }
+
+  onProfile() {
+    this.router.navigate(["/profile"]);
+  }
 
 }
