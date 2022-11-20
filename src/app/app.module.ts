@@ -16,6 +16,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { DarkModeToggleComponent } from './Components/dark-mode-toggle/dark-mode-toggle.component';
 import { AccountDetailComponent } from './Components/account-detail/account-detail.component';
 import { TransferComponent } from './Components/Pages/transfer/transfer.component';
+import { ZelleComponent } from './Components/Pages/zelle/zelle.component';
 
 
 
@@ -31,7 +32,8 @@ import { TransferComponent } from './Components/Pages/transfer/transfer.componen
     NavbarComponent,
     DarkModeToggleComponent,
     AccountDetailComponent,
-    TransferComponent
+    TransferComponent,
+    ZelleComponent
     
   ],
   imports: [

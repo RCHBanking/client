@@ -6,6 +6,7 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 import { RegisterComponent } from './Components/Pages/register/register.component';
 import { SummaryComponent } from './Components/Pages/summary/summary.component';
 import { TransferComponent } from './Components/Pages/transfer/transfer.component';
+import { ZelleComponent } from './Components/Pages/zelle/zelle.component';
 
 const routes: Routes = [
   
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path: 'transfer',
     component: TransferComponent
+  },
+
+  {
+    path: 'zelle',
+    component: ZelleComponent
   },
 
   {

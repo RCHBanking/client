@@ -54,4 +54,10 @@ export class TransactionService {
       console.log(data)
     });
   }
+
+  registerZelle(amount: number, description: string, fromId: number, toId: string){    
+    return this.http.post<any>(environment.apiUrl + `/api/transaction/create-zelle-payment/${fromId}&${toId}`, {amount: `${amount}`, description: `${description}`, transactionType: 4}, this.requestOptions).subscribe(data => {
+      console.log(data)
+    });
+  }
 }
