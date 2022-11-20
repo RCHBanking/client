@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TransactionService } from 'src/app/Services/transaction/transaction.service';
 import { AccountService } from 'src/app/Services/account/account.service';
 import { Account } from 'src/app/Models/account';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth/auth.service';
 
 @Component({
   selector: 'app-zelle',
@@ -9,7 +11,10 @@ import { Account } from 'src/app/Models/account';
   styleUrls: ['./zelle.component.css']
 })
 export class ZelleComponent {
-  constructor(private transactionService: TransactionService, private accountService: AccountService) { }
+  constructor(private transactionService: TransactionService, 
+    private accountService: AccountService,
+    private authService: AuthService,
+    private router: Router) { }
 
   public accounts: Account[] = [];
   selectedAccountId: number = 0;
@@ -23,6 +28,9 @@ export class ZelleComponent {
   
 
   ngOnInit(): void {
+    if (this.authService.loggedOut()) {
+      this.router.navigate(["/"]);
+    }
     this.getAccounts();
     
   }

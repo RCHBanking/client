@@ -31,6 +31,9 @@ export class SummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.authService.loggedOut()) {
+      this.router.navigate(["/"]);
+    }
     const header = {
       "Authorization": `Bearer ${localStorage.getItem("token")}`
     }

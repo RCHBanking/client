@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { Customer } from 'src/app/Models/customer';
+import { AuthService } from 'src/app/Services/auth/auth.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,9 +15,16 @@ export class ProfileComponent implements OnInit {
 
   profile:any = {};
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
+    if(this.authService.loggedOut()) {
+      this.router.navigate(["/"]);
+    }
     const header = {
       "Authorization": `Bearer ${localStorage.getItem("token")}`
     }

@@ -5,6 +5,8 @@ import { NgModel } from '@angular/forms';
 import { Account } from 'src/app/Models/account';
 import { HttpClient } from '@angular/common/http';
 import { AccountService } from '../../../Services/account/account.service';
+import { AuthService } from 'src/app/Services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transfer',
@@ -13,7 +15,10 @@ import { AccountService } from '../../../Services/account/account.service';
 })
 export class TransferComponent implements OnInit {
 
-  constructor(private transactionService: TransactionService, private accountService: AccountService) { }
+  constructor(private transactionService: TransactionService, 
+    private accountService: AccountService,
+    private authService: AuthService,
+    private router: Router) { }
 
   public accounts: Account[] = [];
   selectedAccountId: number = 0;
@@ -27,6 +32,9 @@ export class TransferComponent implements OnInit {
   
 
   ngOnInit(): void {
+    if (this.authService.loggedOut()) {
+      this.router.navigate(["/"]);
+    }
     this.getAccounts();
     
   }

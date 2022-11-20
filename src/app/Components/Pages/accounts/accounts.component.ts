@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Account } from 'src/app/Models/account';
 import { Transaction } from 'src/app/Models/transaction';
 import { AccountService } from 'src/app/Services/account/account.service';
+import { AuthService } from 'src/app/Services/auth/auth.service';
 import { TransactionService } from 'src/app/Services/transaction/transaction.service';
 
 @Component({
