@@ -1,8 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
+import { Customer } from '../../../Models/customer';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +19,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router:Router,
+    private router: Router,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -26,8 +30,8 @@ export class RegisterComponent implements OnInit {
       address1:["", [Validators.required]],
       address2:["",],
       state:["", [Validators.required, Validators.maxLength(2)]],
-      zip:["", [Validators.required], Validators.minLength(5), Validators.maxLength(5)],
-      email:["", [Validators.required, Validators.email,Validators]],
+      zipcode:["", [Validators.required], Validators.minLength(5), Validators.maxLength(5)],
+      email:["", [Validators.required, Validators.email]],
       username:["", [Validators.required]],
       password:["", [Validators.required]],
     });
@@ -38,7 +42,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister(){
-
+    this.submitted = true;
+    const customer: Customer = this.registerForm.value;
+    lastValueFrom(this.http.post(`${environment.apiUrl}/api/customer/register`, customer)).then(() => this.router.navigate(['/login']));
   }
 
+  onRedirect() {
+    this.router.navigate(["/login"]);
+  }
 }

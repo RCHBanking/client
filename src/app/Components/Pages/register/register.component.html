@@ -43,6 +43,23 @@
         </div>
     </div>
     <div>
+        <label>Zipcode</label>
+        <input type="zipcode" formControlName="zipcode" class="form-control" placeholder="Enter zipcode">
+        <div *ngIf="submitted && formControl['zipcode'].errors" class="invalid=feedback">
+            <div *ngIf="formControl['zipcode'].errors['required']">Zipcode is required</div>
+            <div *ngIf="formControl['zipcode'].errors['minLength']">Invalid zipcode</div>
+            <div *ngIf="formControl['zipcode'].errors['maxLength']">Inavlid zipcode</div>
+        </div>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="Enter email">
+        <div *ngIf="submitted && formControl['email'].errors" class="invalid-feedback">
+            <div *ngIf="formControl['email'].errors['required']">Email is required!</div>
+            <div *ngIf="formControl['email'].errors['emali']">Invalid email</div>
+        </div>
+    </div>
+    <div>
         <label>Username</label>
         <br />
         <input type="username" formControlName="username" class="form-control" placeholder="Enter Username">
@@ -50,7 +67,6 @@
             <div *ngIf="formControl['username'].errors['required']"></div>
         </div>
     </div>
-    
     <div>
         <label>Password</label>
         <br />
@@ -62,6 +78,7 @@
     <br>
     <div class="button-container">
         <button class="button" type="submit">Register</button>
+        <button class="button" type="button" (click)="onRedirect()">Login</button>
     </div>
 </form>
 </div>

@@ -1,3 +1,4 @@
+import { ProfileComponent } from './Components/Pages/profile/profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
@@ -25,9 +26,15 @@ const routes: Routes = [
   },
 
   {
+    path:'profile',
+    component: ProfileComponent
+  },
+
+  {
     path:'homepage',
     component: HomepageComponent
   },
+  
   { 
     path: '',   
     redirectTo: '/homepage', 

@@ -39,4 +39,8 @@ export class LoginComponent implements OnInit {
     }
     await lastValueFrom(this.authService.login(this.formControl['username'].value, this.formControl['password'].value)).then(() => this.router.navigate(["/summary"]));
   }
+
+  onRedirect() {
+    this.router.navigate(["/register"]);
+  }
 }

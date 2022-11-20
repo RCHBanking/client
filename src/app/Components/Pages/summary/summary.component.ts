@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
@@ -16,7 +17,7 @@ export class SummaryComponent implements OnInit {
 
   public accounts: Account[] = [];
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private router: Router) { }
   ngOnChanges(changes: SimpleChanges): void {
     const header = {
       "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -41,4 +42,7 @@ export class SummaryComponent implements OnInit {
     .pipe(tap((data) => data.forEach((account: Account) => this.accounts.push(account)))).subscribe();
   }
 
+  onProfile(): void {
+    this.router.navigate(['/profile']);
+  }
 }

@@ -7,7 +7,7 @@
         <br />
         <input type="username" formControlName="username" class="form-control" placeholder="Enter Username">
         <div *ngIf="submitted && formControl['username'].errors" class="invalid-feedback">
-            <div *ngIf="formControl['username'].errors['required']"></div>
+            <div *ngIf="formControl['username'].errors['required']">User name is required!</div>
         </div>
     </div>
     
@@ -16,12 +16,13 @@
         <br />
         <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter Password">
         <div *ngIf="submitted && formControl['password'].errors" class="invalid=feedback">
-            <div *ngIf="formControl['password'].errors['required']"></div>
+            <div *ngIf="formControl['password'].errors['required']">Password is requried!</div>
         </div>
     </div>
     <br>
     <div class="button-container">
         <button class="button" type="submit">Login</button>
+        <button class="button" type="button" (click)="onRedirect()">Register</button>
     </div>
 </form>
 </div>
