@@ -52,7 +52,7 @@
     </div>
     <div>
         <label>Zipcode</label>
-        <br/>
+        <br />
         <input type="zipcode" formControlName="zipcode" class="form-control" placeholder="Enter zipcode">
         <div *ngIf="submitted && formControl['zipcode'].errors" class="invalid=feedback">
             <div *ngIf="formControl['zipcode'].errors['required']">Zipcode is required</div>
@@ -87,8 +87,10 @@
     </div>
     <br>
     <div class="button-container">
-        <button class="button" type="submit">Register</button>
-        <button class="button" type="button" (click)="onRedirect()">Login</button>
+        <button class="register" type="submit">Register</button>
+        <br />
+        <br />
+        <button class="login" type="button" (click)="onRedirect()">Login</button>
     </div>
 </form>
 </div>

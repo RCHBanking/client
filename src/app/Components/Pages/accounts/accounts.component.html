@@ -1,8 +1,14 @@
+<div class="button-container">
+    <button class="button" type="button" (click)="onProfile()">My Profile</button>
+    <br />
+    <br />
+    <button class="button" type="button" (click)="onTransfer()">Transfer money</button>
+    <br />
+    <br />
+    <button class="button" type="button" (click)="onSendMoney()">Send money</button>
+</div>
 <div class="account-overview-summary single-account-summary CPO clearfix">
     <h2 id="singleSummaryHeaderName" class="ACTICLE account-name">My Accounts</h2>
-    <div class="button-container">
-        <button class="button" type="button" (click)="onTransfer()">Transfer</button>
-    </div>
 </div>
 <ul class="accounts">
     <li *ngFor="let account of accounts">
@@ -119,11 +125,12 @@
 </div>
 </section>
 
-<section *ngIf="selectedView">
-    <ul>
+<section class="centerbox" *ngIf="selectedView">
+    <h2>Transactions</h2>
+    <ul class="floatleft">
         <li *ngFor="let transaction of selectedView">
-            <span>{{transaction.amount}}</span>
-            <span>{{transaction.description}}</span>
+            <span><h3>Amount: </h3>{{transaction.amount | currency }}</span>
+            <span><h3>Description: </h3>{{transaction.description}}</span>
         </li>
     </ul>
 </section>

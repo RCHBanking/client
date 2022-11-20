@@ -173,3 +173,7 @@
     color: white;
     border-color: rgb(192, 141, 0);
   }
+
+  .floatleft {
+    text-align: left;
+}
