@@ -34,6 +34,14 @@
         <input type="address2" formControlName="address2" class="form-control" placeholder="Enter #">
     </div>
     <div>
+        <label>City</label>
+        <br />
+        <input type="state" formControlName="state" class="form-control" placeholder="Enter city">
+        <div *ngIf="submitted && formControl['city'].errors" class="invalid-feedback">
+            <div *ngIf="formControl['city'].errors['required']">State is required!</div>
+        </div>
+    </div>
+    <div>
         <label>State</label>
         <br />
         <input type="state" formControlName="state" class="form-control" placeholder="Enter state">
@@ -44,6 +52,7 @@
     </div>
     <div>
         <label>Zipcode</label>
+        <br/>
         <input type="zipcode" formControlName="zipcode" class="form-control" placeholder="Enter zipcode">
         <div *ngIf="submitted && formControl['zipcode'].errors" class="invalid=feedback">
             <div *ngIf="formControl['zipcode'].errors['required']">Zipcode is required</div>
@@ -53,6 +62,7 @@
     </div>
     <div>
         <label>Email</label>
+        <br />
         <input type="email" formControlName="email" class="form-control" placeholder="Enter email">
         <div *ngIf="submitted && formControl['email'].errors" class="invalid-feedback">
             <div *ngIf="formControl['email'].errors['required']">Email is required!</div>
