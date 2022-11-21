@@ -10,6 +10,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Connecting to a Backend API
+
+The `envirment.ts` file in `src/enviroments` provides the URL to the backend API. Its defualt value is `http://localhost:8080`(the defualt port that a tomcat server runs on). Please change the url if your back end differs/ is put into the cloud.
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
